@@ -14,9 +14,10 @@ function getComputerChoice() {
 
 let playerChoice = "";
 
-const rockButton = document.querySelector('#rock')
-const paperButton = document.querySelector('#paper')
-const scissorButton = document.querySelector('#scissor')
+const rockButton = document.querySelector('#rock');
+const paperButton = document.querySelector('#paper');
+const scissorButton = document.querySelector('#scissor');
+const outputText = document.querySelector('#output');
 
 rockButton.onclick = () => playRound("rock");
 paperButton.onclick = () => playRound("paper");
@@ -28,30 +29,30 @@ function playRound(playerChoice) {
 
     if ((playerChoice == "rock") && (computerChoice == "scissor")) {
         playerScore++;
-        console.log("You win, Rock beats Scissor!");
+        outputText.textContent = "You win, Rock beats Scissor!";
     }
     else if ((playerChoice == "rock") && (computerChoice == "paper")) {
         computerScore++;
-        console.log("You lose, Paper beats Rock!");
+        outputText.textContent = "You lose, Paper beats Rock!";
     }
     else if ((playerChoice == "scissor") && (computerChoice == "paper")) {
         playerScore++;
-        console.log("You win, Scissor beats Paper!");
+        outputText.textContent = "You win, Scissor beats Paper!";
     }
     else if ((playerChoice == "scissor") && (computerChoice == "rock")) {
         computerScore++;
-        console.log("You lose, Rock beats Scissor!");
+        outputText.textContent = "You lose, Rock beats Scissor!";
     }
     else if ((playerChoice == "paper") && (computerChoice == "rock")) {
         playerScore++;
-        console.log("You win, Paper beats Rock!");
+        outputText.textContent = "You win, Paper beats Rock!";
     }
     else if ((playerChoice == "paper") && (computerChoice == "scissor")) {
         computerScore++;
-        console.log("You lose, Scissor beats Paper!");
+        outputText.textContent = "You lose, Scissor beats Paper!";
     }
     else if (playerChoice == computerChoice ) {
-        console.log("It's a tie!");
+        outputText.textContent = "It's a tie!";
     }
 }
 
