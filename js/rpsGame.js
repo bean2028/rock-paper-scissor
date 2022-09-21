@@ -12,25 +12,18 @@ function getComputerChoice() {
     }
 }
 
-let playerChoice;
+let playerChoice = "";
 
 const rockButton = document.querySelector('#rock')
 const paperButton = document.querySelector('#paper')
 const scissorButton = document.querySelector('#scissor')
 
-rockButton.addEventListener('click', () => {
-    playerChoice = "Rock";
-});
+rockButton.onclick = () => playRound("rock");
+paperButton.onclick = () => playRound("paper");
+scissorButton.onclick = () => playRound("scissor");
 
-paperButton.addEventListener('click', () => {
-    playerChoice = "Paper";
-});
 
-paperButton.addEventListener('click', () => {
-    playerChoice = "Scissor";
-});
-
-function playRound() {
+function playRound(playerChoice) {
     let computerChoice = getComputerChoice().toLowerCase();
 
     if ((playerChoice == "rock") && (computerChoice == "scissor")) {
