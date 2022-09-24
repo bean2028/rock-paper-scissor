@@ -58,8 +58,23 @@ function playRound(playerChoice) {
 
     document.getElementById("pScore").innerHTML = playerScore.toString();
     document.getElementById("cScore").innerHTML = computerScore.toString();
+
+    if (playerScore == 5) {
+        outputText.textContent = "You won the game! Play again?";
+        resetGame();
+    }
+    else if (computerScore == 5) {
+        outputText.textContent = "You lost the game! Play again?";
+        resetGame();
+    }
 }
 
+function resetGame () {
+    playerScore = 0;
+    computerScore = 0;
+    document.getElementById("pScore").innerHTML = playerScore.toString();
+    document.getElementById("cScore").innerHTML = computerScore.toString();
+}
 
 /*
 function game() {
