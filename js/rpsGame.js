@@ -13,6 +13,8 @@ function getComputerChoice() {
 }
 
 let playerChoice = "";
+let playerScore = 0;
+let computerScore = 0;
 
 const rockButton = document.querySelector('#rock');
 const paperButton = document.querySelector('#paper');
@@ -22,7 +24,6 @@ const outputText = document.querySelector('#output');
 rockButton.onclick = () => playRound("rock");
 paperButton.onclick = () => playRound("paper");
 scissorButton.onclick = () => playRound("scissor");
-
 
 function playRound(playerChoice) {
     let computerChoice = getComputerChoice().toLowerCase();
@@ -54,11 +55,13 @@ function playRound(playerChoice) {
     else if (playerChoice == computerChoice ) {
         outputText.textContent = "It's a tie!";
     }
+
+    document.getElementById("pScore").innerHTML = playerScore.toString();
+    document.getElementById("cScore").innerHTML = computerScore.toString();
 }
 
-let playerScore = 0;
-let computerScore = 0;
 
+/*
 function game() {
     for (let i = 0; i < 5; i++) {
         playRound();
@@ -73,4 +76,4 @@ function game() {
         console.log("It was a tie! Play again?");
     }
 }
-
+*/
